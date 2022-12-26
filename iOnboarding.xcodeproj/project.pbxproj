@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC06E0D32959C38500B80A5F /* LiquidShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC06E0D22959C38500B80A5F /* LiquidShape.swift */; };
 		DC302A13292F79D0001BE38F /* iOnboardingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC302A12292F79D0001BE38F /* iOnboardingApp.swift */; };
 		DC302A15292F79D0001BE38F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC302A14292F79D0001BE38F /* ContentView.swift */; };
 		DC302A17292F79D1001BE38F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC302A16292F79D1001BE38F /* Assets.xcassets */; };
 		DC302A1A292F79D1001BE38F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC302A19292F79D1001BE38F /* Preview Assets.xcassets */; };
 		DC302A23292F7C7B001BE38F /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC302A22292F7C7B001BE38F /* OnboardingScreen.swift */; };
-		DC302A27292F7DEB001BE38F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC302A26292F7DEB001BE38F /* Home.swift */; };
+		DC302A27292F7DEB001BE38F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC302A26292F7DEB001BE38F /* HomeView.swift */; };
 		DC302A2A292F809E001BE38F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC302A29292F809E001BE38F /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC06E0D22959C38500B80A5F /* LiquidShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidShape.swift; sourceTree = "<group>"; };
 		DC302A0F292F79D0001BE38F /* iOnboarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOnboarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC302A12292F79D0001BE38F /* iOnboardingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOnboardingApp.swift; sourceTree = "<group>"; };
 		DC302A14292F79D0001BE38F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DC302A16292F79D1001BE38F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC302A19292F79D1001BE38F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DC302A22292F7C7B001BE38F /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
-		DC302A26292F7DEB001BE38F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		DC302A26292F7DEB001BE38F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DC302A29292F809E001BE38F /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -38,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC06E0D42959C3B100B80A5F /* Shape */ = {
+			isa = PBXGroup;
+			children = (
+				DC06E0D22959C38500B80A5F /* LiquidShape.swift */,
+			);
+			path = Shape;
+			sourceTree = "<group>";
+		};
 		DC302A06292F79CF001BE38F = {
 			isa = PBXGroup;
 			children = (
@@ -61,7 +71,6 @@
 				DC302A21292F7C39001BE38F /* Model */,
 				DC302A20292F7C33001BE38F /* View */,
 				DC302A12292F79D0001BE38F /* iOnboardingApp.swift */,
-				DC302A14292F79D0001BE38F /* ContentView.swift */,
 				DC302A16292F79D1001BE38F /* Assets.xcassets */,
 				DC302A18292F79D1001BE38F /* Preview Content */,
 			);
@@ -79,7 +88,9 @@
 		DC302A20292F7C33001BE38F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DC302A26292F7DEB001BE38F /* Home.swift */,
+				DC06E0D42959C3B100B80A5F /* Shape */,
+				DC302A14292F79D0001BE38F /* ContentView.swift */,
+				DC302A26292F7DEB001BE38F /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,8 +184,9 @@
 				DC302A15292F79D0001BE38F /* ContentView.swift in Sources */,
 				DC302A13292F79D0001BE38F /* iOnboardingApp.swift in Sources */,
 				DC302A2A292F809E001BE38F /* View.swift in Sources */,
-				DC302A27292F7DEB001BE38F /* Home.swift in Sources */,
+				DC302A27292F7DEB001BE38F /* HomeView.swift in Sources */,
 				DC302A23292F7C7B001BE38F /* OnboardingScreen.swift in Sources */,
+				DC06E0D32959C38500B80A5F /* LiquidShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

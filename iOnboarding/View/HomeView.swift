@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Home: View {
+struct HomeView: View {
     
     @State var onboardingScreens: [OnboardingScreen] = [
     
@@ -18,7 +18,6 @@ struct Home: View {
     ]
     
     @GestureState var isDragging: Bool = false
-    @State var fakeIndex: Int = 0
     @State var currentIndex: Int = 0
     
     var body: some View {
@@ -26,8 +25,8 @@ struct Home: View {
             ForEach(onboardingScreens.indices.reversed(), id: \.self) { index in
                 
                 OnboardingView(onboardingScreen: onboardingScreens[index])
-                    .clipShape(LiquidShape(offset: onboardingScreens[index].offset, curvePoint: fakeIndex == index ? 50 : 0))
-                    .padding(.trailing, fakeIndex == index ? 15 : 0)
+                    .clipShape(LiquidShape(offset: onboardingScreens[index].offset, curvePoint: currentIndex == index ? 50 : 0))
+                    .padding(.trailing, currentIndex == index ? 15 : 0)
                     .ignoresSafeArea()
             }
             
@@ -37,8 +36,8 @@ struct Home: View {
                     Circle()
                         .fill(.white)
                         .frame(width: 8, height: 8)
-                        .scaleEffect(fakeIndex == index ? 1.15 : 0.85)
-                        .opacity(fakeIndex == index ? 1 : 0.25)
+                        .scaleEffect(currentIndex == index ? 1.15 : 0.85)
+                        .opacity(currentIndex == index ? 1 : 0.25)
                 }
                 
                 Spacer()
@@ -74,18 +73,18 @@ struct Home: View {
                             })
                             .onChanged({ value in
                                 withAnimation(.interactiveSpring(response: 0.7, dampingFraction: 0.6, blendDuration: 0.6)) {
-                                    onboardingScreens[fakeIndex].offset = value.translation
+                                    onboardingScreens[currentIndex].offset = value.translation
                                 }
                             })
                             .onEnded({ value in
                                 withAnimation(.spring()) {
                                     
-                                    if -onboardingScreens[fakeIndex].offset.width > getRect().width / 2 {
-                                        onboardingScreens[fakeIndex].offset.width = -getRect().height * 1.5
+                                    if -onboardingScreens[currentIndex].offset.width > getRect().width / 2 {
+                                        onboardingScreens[currentIndex].offset.width = -getRect().height * 1.5
                                         
-                                        fakeIndex += 1
+                                        currentIndex += 1
                                     } else {
-                                        onboardingScreens[fakeIndex].offset = .zero
+                                        onboardingScreens[currentIndex].offset = .zero
                                     }
                                     
                                 }
@@ -99,24 +98,6 @@ struct Home: View {
             ,alignment: .topTrailing
             
         )
-//        .onAppear {
-//
-//            guard let first = onboardingScreens.first else {
-//                return
-//            }
-//
-//            guard var last = onboardingScreens.last else {
-//                return
-//            }
-//
-//            last.offset.width = -getRect().height * 1.5
-//
-//            onboardingScreens.append(first)
-//            onboardingScreens.insert(last, at: 0)
-//
-//            fakeIndex = 1
-//
-//        }
     }
     
     @ViewBuilder
@@ -159,47 +140,8 @@ struct Home: View {
     
 }
 
-struct Home_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        HomeView()
     }
-}
-
-struct LiquidShape: Shape {
-    
-    var offset: CGSize
-    var curvePoint: CGFloat
-    
-    var animatableData: AnimatablePair<CGSize.AnimatableData, CGFloat> {
-        get {
-            return AnimatablePair(offset.animatableData, curvePoint)
-        }
-        set {
-            offset.animatableData = newValue.first
-            curvePoint = newValue.second
-        }
-    }
-    
-    func path(in rect: CGRect) -> Path {
-        return Path { path in
-            
-            let width = rect.width + (-offset.width > 0 ? offset.width : 0)
-            
-            path.move(to: CGPoint(x: 0, y: 0))
-            path.addLine(to: CGPoint(x: rect.width, y: 0))
-            path.addLine(to: CGPoint(x: rect.width, y: rect.height))
-            path.addLine(to: CGPoint(x: 0, y: rect.height))
-
-            let from = 80 + offset.width
-            path.move(to: CGPoint(x: rect.width, y: from > 80 ? 80 : from))
-            
-            var to = 180 + offset.height - offset.width
-            to = to < 180 ? 180 : to
-            
-            let mid: CGFloat = 80 + ((to - 80) / 2)
-            
-            path.addCurve(to: CGPoint(x: rect.width, y: to), control1: CGPoint(x: width - curvePoint, y: mid), control2: CGPoint(x: width - curvePoint, y: mid))
-        }
-    }
-    
 }
