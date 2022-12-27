@@ -28,8 +28,8 @@ This iOS onboarding template, built entirely with [SwiftUI](https://developer.ap
 </p>
 
 ## Requirements
-iOS 13.0 or later
-Xcode 11 or later
+- iOS 13.0 or later
+- Xcode 11 or later
 
 # Community
 Contributions from the community are welcomed in this project:
