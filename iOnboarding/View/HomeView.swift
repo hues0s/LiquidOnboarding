@@ -12,7 +12,7 @@ struct HomeView: View {
     @State var onboardingItems: [OnboardingItem] = [
     
         .init(title: "Request Pickup", subTitle: "Tell us who you're sending it to, what you're sending and when it's best to pickup the package and we will pick it up at the most convenient time", color: Color("Green"), lottieView: .init(name: "Pickup", bundle: .main)),
-        .init(title: "Track Delivery", subTitle: "The best part starts when our courier is on the way to your location, as you will get real time notifications as to the exact locations of the courier", color: Color("Purple"), lottieView: .init(name: "Delivery", bundle: .main)),
+        .init(title: "Track Delivery", subTitle: "The best part starts when our courier is on the way to your location, as you will get real time notifications of his exact location", color: Color("Purple"), lottieView: .init(name: "Delivery", bundle: .main)),
         .init(title: "Receive Package", subTitle: "The journey ends when your package get to it's locations. Get notified immediately when you package is received at its intended location", color: Color("Red"), lottieView: .init(name: "Receive", bundle: .main))
         
     ]
@@ -103,44 +103,57 @@ struct HomeView: View {
     @ViewBuilder
     func OnboardingView(onboardingItem: OnboardingItem, itemIndex: Int) -> some View {
         VStack {
-            ResizableLottieView(onboardingItem: onboardingItem)
-                .onAppear {
-                    if currentIndex == itemIndex {
-                        onboardingItem.lottieView.loopMode = .loop
-                        onboardingItem.lottieView.play()
-                    }
-                }
             
-            VStack(spacing: 15) {
-           
+            Spacer()
+            ResizableLottieView(onboardingItem: onboardingItem)
+                .frame(maxWidth: 340, maxHeight: 340)
+                .onAppear {
+                    onboardingItem.lottieView.loopMode = .loop
+                    onboardingItem.lottieView.play()
+                }
+                
+            VStack(spacing: 20) {
+                
                 Text(onboardingItem.title)
                     .font(.title.bold())
                 
                 Text(onboardingItem.subTitle)
                     .font(.system(size: 14))
                     .multilineTextAlignment(.center)
-                
-                Spacer()
+                    .padding(.horizontal, 7)
                 
                 HStack {
-                    Text("Terms of Service")
-                        .underline(true, color: .primary)
-                    Text("Privacy Policy")
-                        .underline(true, color: .primary)
+                    Button(action: {
+                        
+                    }, label: {
+                        Text("Terms of Service")
+                            .font(.system(size: 11))
+                            .underline(true, color: .white)
+                            .padding(.trailing, 5)
+                    })
+                    
+                    Button(action: {
+                        
+                    }, label: {
+                        Text("Privacy Policy")
+                            .font(.system(size: 11))
+                            .underline(true, color: .white)
+                            .padding(.leading, 5)
+                    })
                 }
+                .padding(.top, 15)
                 
             }
             .foregroundColor(.white)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading, 20)
-            .padding([.trailing, .top])
+            .padding(.top, 30)
+            .padding(.trailing)
+            
+            Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(
-            onboardingItem.color
-            
-        )
-
+        .background(onboardingItem.color)
         
     }
     
@@ -149,31 +162,5 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-    }
-}
-
-struct ResizableLottieView: UIViewRepresentable {
-    
-    var onboardingItem: OnboardingItem
-    
-    func makeUIView(context: Context) -> some UIView {
-        let view = UIView()
-        view.backgroundColor = .clear
-        setUpLottieView(view)
-        return view
-    }
-    
-    func updateUIView(_ uiView: UIViewType, context: Context) {
-        
-    }
-    
-    func setUpLottieView(_ to: UIView) {
-        let lottieView = onboardingItem.lottieView
-        lottieView.backgroundColor = .clear
-        lottieView.translatesAutoresizingMaskIntoConstraints = false
-        
-        to.addSubview(lottieView)
-        lottieView.widthAnchor.constraint(equalTo: to.widthAnchor).isActive = true
-        lottieView.heightAnchor.constraint(equalTo: to.heightAnchor).isActive = true
     }
 }
