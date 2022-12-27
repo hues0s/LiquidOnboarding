@@ -9,11 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State var onboardingScreens: [OnboardingScreen] = [
+    @State var onboardingItems: [OnboardingItem] = [
     
-        OnboardingScreen(title: "Plan", subTitle: "your routes", description: "View your collection route Follow, change or add to your route yourself", pic: "Pic1", color: Color("Green")),
-        OnboardingScreen(title: "Quick Waste", subTitle: "Transfer Note", description: "Record oil collections easily and accurately. No more paper!", pic: "Pic2", color: Color("Purple")),
-        OnboardingScreen(title: "Invite", subTitle: "restaurants", description: "Know some restaurant who want to optimize oil collection? Invite them with one click", pic: "Pic3", color: Color("Red"))
+        .init(title: "Request Pickup", subTitle: "Tell us who you're sending it to, what you're sending and when it's best to pickup the package and we will pick it up at the most convenient time", color: Color("Green"), lottieView: .init(name: "Pickup", bundle: .main)),
+        .init(title: "Track Delivery", subTitle: "The best part starts when our courier is on the way to your location, as you will get real time notifications as to the exact locations of the courier", color: Color("Purple"), lottieView: .init(name: "Delivery", bundle: .main)),
+        .init(title: "Receive Package", subTitle: "The journey ends when your package get to it's locations. Get notified immediately when you package is received at its intended location", color: Color("Red"), lottieView: .init(name: "Receive", bundle: .main))
         
     ]
     
@@ -22,16 +22,16 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
-            ForEach(onboardingScreens.indices.reversed(), id: \.self) { index in
+            ForEach(onboardingItems.indices.reversed(), id: \.self) { index in
                 
-                OnboardingView(onboardingScreen: onboardingScreens[index])
-                    .clipShape(LiquidShape(offset: onboardingScreens[index].offset, curvePoint: currentIndex == index ? 50 : 0))
+                OnboardingView(onboardingItem: onboardingItems[index], itemIndex: index)
+                    .clipShape(LiquidShape(offset: onboardingItems[index].offset, curvePoint: currentIndex == index ? 50 : 0))
                     .padding(.trailing, currentIndex == index ? 15 : 0)
                     .ignoresSafeArea()
             }
             
             HStack(spacing: 8) {
-                ForEach(0..<onboardingScreens.count, id: \.self) { index in
+                ForEach(0..<onboardingItems.count, id: \.self) { index in
                     
                     Circle()
                         .fill(.white)
@@ -73,18 +73,18 @@ struct HomeView: View {
                             })
                             .onChanged({ value in
                                 withAnimation(.interactiveSpring(response: 0.7, dampingFraction: 0.6, blendDuration: 0.6)) {
-                                    onboardingScreens[currentIndex].offset = value.translation
+                                    onboardingItems[currentIndex].offset = value.translation
                                 }
                             })
                             .onEnded({ value in
                                 withAnimation(.spring()) {
                                     
-                                    if -onboardingScreens[currentIndex].offset.width > getRect().width / 2 {
-                                        onboardingScreens[currentIndex].offset.width = -getRect().height * 1.5
+                                    if -onboardingItems[currentIndex].offset.width > getRect().width / 2 {
+                                        onboardingItems[currentIndex].offset.width = -getRect().height * 1.5
                                         
                                         currentIndex += 1
                                     } else {
-                                        onboardingScreens[currentIndex].offset = .zero
+                                        onboardingItems[currentIndex].offset = .zero
                                     }
                                     
                                 }
@@ -101,28 +101,34 @@ struct HomeView: View {
     }
     
     @ViewBuilder
-    func OnboardingView(onboardingScreen: OnboardingScreen) -> some View {
-        
+    func OnboardingView(onboardingItem: OnboardingItem, itemIndex: Int) -> some View {
         VStack {
+            ResizableLottieView(onboardingItem: onboardingItem)
+                .onAppear {
+                    if currentIndex == itemIndex {
+                        onboardingItem.lottieView.loopMode = .loop
+                        onboardingItem.lottieView.play()
+                    }
+                }
             
-            Image(onboardingScreen.pic)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .padding(40)
-            
-            VStack(alignment: .leading, spacing: 0) {
-                Text(onboardingScreen.title)
-                    .font(.system(size: 45))
+            VStack(spacing: 15) {
+           
+                Text(onboardingItem.title)
+                    .font(.title.bold())
                 
-                Text(onboardingScreen.subTitle)
-                    .font(.system(size: 50, weight: .bold))
+                Text(onboardingItem.subTitle)
+                    .font(.system(size: 14))
+                    .multilineTextAlignment(.center)
                 
-                Text(onboardingScreen.description)
-                    .font(.system(size: 20))
-                    .fontWeight(.semibold)
-                    .padding(.top)
-                    .frame(width: getRect().width - 100)
-                    .lineSpacing(8)
+                Spacer()
+                
+                HStack {
+                    Text("Terms of Service")
+                        .underline(true, color: .primary)
+                    Text("Privacy Policy")
+                        .underline(true, color: .primary)
+                }
+                
             }
             .foregroundColor(.white)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -131,7 +137,7 @@ struct HomeView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
-            onboardingScreen.color
+            onboardingItem.color
             
         )
 
@@ -143,5 +149,31 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+    }
+}
+
+struct ResizableLottieView: UIViewRepresentable {
+    
+    var onboardingItem: OnboardingItem
+    
+    func makeUIView(context: Context) -> some UIView {
+        let view = UIView()
+        view.backgroundColor = .clear
+        setUpLottieView(view)
+        return view
+    }
+    
+    func updateUIView(_ uiView: UIViewType, context: Context) {
+        
+    }
+    
+    func setUpLottieView(_ to: UIView) {
+        let lottieView = onboardingItem.lottieView
+        lottieView.backgroundColor = .clear
+        lottieView.translatesAutoresizingMaskIntoConstraints = false
+        
+        to.addSubview(lottieView)
+        lottieView.widthAnchor.constraint(equalTo: to.widthAnchor).isActive = true
+        lottieView.heightAnchor.constraint(equalTo: to.heightAnchor).isActive = true
     }
 }

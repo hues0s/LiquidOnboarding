@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
+import Lottie
 
-struct OnboardingScreen: Identifiable {
+struct OnboardingItem: Identifiable {
     var id = UUID().uuidString
     var title: String
     var subTitle: String
-    var description: String
-    var pic: String
     var color: Color
     var offset: CGSize = .zero
+    var lottieView: LottieAnimationView = .init()
 }

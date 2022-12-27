@@ -7,24 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30DA74731A082ECBDD2D3C0F /* Pods_iOnboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B11879A0F4F728032613B25C /* Pods_iOnboarding.framework */; };
 		DC06E0D32959C38500B80A5F /* LiquidShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC06E0D22959C38500B80A5F /* LiquidShape.swift */; };
+		DC06E0D82959C54F00B80A5F /* Pickup.json in Resources */ = {isa = PBXBuildFile; fileRef = DC06E0D52959C54F00B80A5F /* Pickup.json */; };
+		DC06E0D92959C54F00B80A5F /* Delivery.json in Resources */ = {isa = PBXBuildFile; fileRef = DC06E0D62959C54F00B80A5F /* Delivery.json */; };
+		DC06E0DA2959C54F00B80A5F /* Receive.json in Resources */ = {isa = PBXBuildFile; fileRef = DC06E0D72959C54F00B80A5F /* Receive.json */; };
 		DC302A13292F79D0001BE38F /* iOnboardingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC302A12292F79D0001BE38F /* iOnboardingApp.swift */; };
 		DC302A15292F79D0001BE38F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC302A14292F79D0001BE38F /* ContentView.swift */; };
 		DC302A17292F79D1001BE38F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC302A16292F79D1001BE38F /* Assets.xcassets */; };
 		DC302A1A292F79D1001BE38F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC302A19292F79D1001BE38F /* Preview Assets.xcassets */; };
-		DC302A23292F7C7B001BE38F /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC302A22292F7C7B001BE38F /* OnboardingScreen.swift */; };
+		DC302A23292F7C7B001BE38F /* OnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC302A22292F7C7B001BE38F /* OnboardingItem.swift */; };
 		DC302A27292F7DEB001BE38F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC302A26292F7DEB001BE38F /* HomeView.swift */; };
 		DC302A2A292F809E001BE38F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC302A29292F809E001BE38F /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C0D5FC6913AD9D8CDFC6473 /* Pods-iOnboarding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOnboarding.release.xcconfig"; path = "Target Support Files/Pods-iOnboarding/Pods-iOnboarding.release.xcconfig"; sourceTree = "<group>"; };
+		B11879A0F4F728032613B25C /* Pods_iOnboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOnboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBE26C7FCD908FF2FCFBBA49 /* Pods-iOnboarding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOnboarding.debug.xcconfig"; path = "Target Support Files/Pods-iOnboarding/Pods-iOnboarding.debug.xcconfig"; sourceTree = "<group>"; };
 		DC06E0D22959C38500B80A5F /* LiquidShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidShape.swift; sourceTree = "<group>"; };
+		DC06E0D52959C54F00B80A5F /* Pickup.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Pickup.json; sourceTree = "<group>"; };
+		DC06E0D62959C54F00B80A5F /* Delivery.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Delivery.json; sourceTree = "<group>"; };
+		DC06E0D72959C54F00B80A5F /* Receive.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Receive.json; sourceTree = "<group>"; };
 		DC302A0F292F79D0001BE38F /* iOnboarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOnboarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC302A12292F79D0001BE38F /* iOnboardingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOnboardingApp.swift; sourceTree = "<group>"; };
 		DC302A14292F79D0001BE38F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DC302A16292F79D1001BE38F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC302A19292F79D1001BE38F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DC302A22292F7C7B001BE38F /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
+		DC302A22292F7C7B001BE38F /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
 		DC302A26292F7DEB001BE38F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DC302A29292F809E001BE38F /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -34,12 +44,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30DA74731A082ECBDD2D3C0F /* Pods_iOnboarding.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E69FF0D853FB0C216239E76 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BBE26C7FCD908FF2FCFBBA49 /* Pods-iOnboarding.debug.xcconfig */,
+				0C0D5FC6913AD9D8CDFC6473 /* Pods-iOnboarding.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		60175D1559E35B9FC79C5C2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B11879A0F4F728032613B25C /* Pods_iOnboarding.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DC06E0D42959C3B100B80A5F /* Shape */ = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +79,13 @@
 		DC302A06292F79CF001BE38F = {
 			isa = PBXGroup;
 			children = (
+				DC06E0D62959C54F00B80A5F /* Delivery.json */,
+				DC06E0D52959C54F00B80A5F /* Pickup.json */,
+				DC06E0D72959C54F00B80A5F /* Receive.json */,
 				DC302A11292F79D0001BE38F /* iOnboarding */,
 				DC302A10292F79D0001BE38F /* Products */,
+				1E69FF0D853FB0C216239E76 /* Pods */,
+				60175D1559E35B9FC79C5C2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +131,7 @@
 		DC302A21292F7C39001BE38F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DC302A22292F7C7B001BE38F /* OnboardingScreen.swift */,
+				DC302A22292F7C7B001BE38F /* OnboardingItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,9 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC302A1D292F79D1001BE38F /* Build configuration list for PBXNativeTarget "iOnboarding" */;
 			buildPhases = (
+				C61F3745855B7B47733C2C0D /* [CP] Check Pods Manifest.lock */,
 				DC302A0B292F79D0001BE38F /* Sources */,
 				DC302A0C292F79D0001BE38F /* Frameworks */,
 				DC302A0D292F79D0001BE38F /* Resources */,
+				46A988B4EF9EEDCDE0C15E39 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,12 +204,57 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC06E0D82959C54F00B80A5F /* Pickup.json in Resources */,
+				DC06E0D92959C54F00B80A5F /* Delivery.json in Resources */,
+				DC06E0DA2959C54F00B80A5F /* Receive.json in Resources */,
 				DC302A1A292F79D1001BE38F /* Preview Assets.xcassets in Resources */,
 				DC302A17292F79D1001BE38F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46A988B4EF9EEDCDE0C15E39 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOnboarding/Pods-iOnboarding-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOnboarding/Pods-iOnboarding-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOnboarding/Pods-iOnboarding-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C61F3745855B7B47733C2C0D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOnboarding-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DC302A0B292F79D0001BE38F /* Sources */ = {
@@ -185,7 +265,7 @@
 				DC302A13292F79D0001BE38F /* iOnboardingApp.swift in Sources */,
 				DC302A2A292F809E001BE38F /* View.swift in Sources */,
 				DC302A27292F7DEB001BE38F /* HomeView.swift in Sources */,
-				DC302A23292F7C7B001BE38F /* OnboardingScreen.swift in Sources */,
+				DC302A23292F7C7B001BE38F /* OnboardingItem.swift in Sources */,
 				DC06E0D32959C38500B80A5F /* LiquidShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +391,7 @@
 		};
 		DC302A1E292F79D1001BE38F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBE26C7FCD908FF2FCFBBA49 /* Pods-iOnboarding.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -340,6 +421,7 @@
 		};
 		DC302A1F292F79D1001BE38F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C0D5FC6913AD9D8CDFC6473 /* Pods-iOnboarding.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
