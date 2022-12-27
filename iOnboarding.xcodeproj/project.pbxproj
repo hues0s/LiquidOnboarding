@@ -12,12 +12,13 @@
 		DC06E0D82959C54F00B80A5F /* Pickup.json in Resources */ = {isa = PBXBuildFile; fileRef = DC06E0D52959C54F00B80A5F /* Pickup.json */; };
 		DC06E0D92959C54F00B80A5F /* Delivery.json in Resources */ = {isa = PBXBuildFile; fileRef = DC06E0D62959C54F00B80A5F /* Delivery.json */; };
 		DC06E0DA2959C54F00B80A5F /* Receive.json in Resources */ = {isa = PBXBuildFile; fileRef = DC06E0D72959C54F00B80A5F /* Receive.json */; };
+		DC27286F295B321F008D2152 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27286E295B321F008D2152 /* HomeView.swift */; };
 		DC302A13292F79D0001BE38F /* iOnboardingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC302A12292F79D0001BE38F /* iOnboardingApp.swift */; };
 		DC302A15292F79D0001BE38F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC302A14292F79D0001BE38F /* ContentView.swift */; };
 		DC302A17292F79D1001BE38F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC302A16292F79D1001BE38F /* Assets.xcassets */; };
 		DC302A1A292F79D1001BE38F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC302A19292F79D1001BE38F /* Preview Assets.xcassets */; };
 		DC302A23292F7C7B001BE38F /* OnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC302A22292F7C7B001BE38F /* OnboardingItem.swift */; };
-		DC302A27292F7DEB001BE38F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC302A26292F7DEB001BE38F /* HomeView.swift */; };
+		DC302A27292F7DEB001BE38F /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC302A26292F7DEB001BE38F /* OnboardingView.swift */; };
 		DC302A2A292F809E001BE38F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC302A29292F809E001BE38F /* View.swift */; };
 		DC805F12295B264700296BEB /* ResizableLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC805F11295B264700296BEB /* ResizableLottieView.swift */; };
 /* End PBXBuildFile section */
@@ -30,13 +31,14 @@
 		DC06E0D52959C54F00B80A5F /* Pickup.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Pickup.json; sourceTree = "<group>"; };
 		DC06E0D62959C54F00B80A5F /* Delivery.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Delivery.json; sourceTree = "<group>"; };
 		DC06E0D72959C54F00B80A5F /* Receive.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Receive.json; sourceTree = "<group>"; };
+		DC27286E295B321F008D2152 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DC302A0F292F79D0001BE38F /* iOnboarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOnboarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC302A12292F79D0001BE38F /* iOnboardingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOnboardingApp.swift; sourceTree = "<group>"; };
 		DC302A14292F79D0001BE38F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DC302A16292F79D1001BE38F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC302A19292F79D1001BE38F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DC302A22292F7C7B001BE38F /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
-		DC302A26292F7DEB001BE38F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DC302A26292F7DEB001BE38F /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DC302A29292F809E001BE38F /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		DC805F11295B264700296BEB /* ResizableLottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableLottieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,7 +125,8 @@
 			children = (
 				DC06E0D42959C3B100B80A5F /* Shape */,
 				DC302A14292F79D0001BE38F /* ContentView.swift */,
-				DC302A26292F7DEB001BE38F /* HomeView.swift */,
+				DC27286E295B321F008D2152 /* HomeView.swift */,
+				DC302A26292F7DEB001BE38F /* OnboardingView.swift */,
 				DC805F11295B264700296BEB /* ResizableLottieView.swift */,
 			);
 			path = View;
@@ -276,7 +279,8 @@
 				DC302A15292F79D0001BE38F /* ContentView.swift in Sources */,
 				DC302A13292F79D0001BE38F /* iOnboardingApp.swift in Sources */,
 				DC302A2A292F809E001BE38F /* View.swift in Sources */,
-				DC302A27292F7DEB001BE38F /* HomeView.swift in Sources */,
+				DC302A27292F7DEB001BE38F /* OnboardingView.swift in Sources */,
+				DC27286F295B321F008D2152 /* HomeView.swift in Sources */,
 				DC302A23292F7C7B001BE38F /* OnboardingItem.swift in Sources */,
 				DC06E0D32959C38500B80A5F /* LiquidShape.swift in Sources */,
 			);
