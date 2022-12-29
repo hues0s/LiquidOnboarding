@@ -33,8 +33,8 @@ This iOS onboarding template, built entirely with [SwiftUI](https://developer.ap
 
 # Community
 Contributions from the community are welcomed in this project:
-* For help & feedback please use [issues](https://github.com/hues0s/LiquidOnboarding/issues).
-* Got a new feature? Please submit a [pull request](https://github.com/hues0s/LiquidOnboarding/pulls).
+* If you have an idea for a new feature or have found a bug, please open an [issue](https://github.com/hues0s/LiquidOnboarding/issues).
+* If you'd like to contribute code, please create a [pull request](https://github.com/hues0s/LiquidOnboarding/pulls).
 
 # License
 This project is distributed under the GNU General Public License. See the [LICENSE](https://github.com/hues0s/LiquidOnboarding/blob/main/LICENSE.md) file for more information.
